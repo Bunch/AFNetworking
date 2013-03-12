@@ -427,6 +427,10 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
 	[self.defaultHeaders removeObjectForKey:@"Authorization"];
 }
 
+- (NSMutableDictionary *)getDefaultHeaders {
+    return self.defaultHeaders;
+}
+
 #pragma mark -
 
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method

@@ -129,11 +129,6 @@ typedef enum {
 @property (readonly, nonatomic, strong) NSOperationQueue *operationQueue;
 
 /**
- Default headers sent on every request by the HTTP client.
- */
-@property (readonly, nonatomic, retain) NSMutableDictionary *defaultHeaders;
-
-/**
  The reachability status from the device to the current `baseURL` of the `AFHTTPClient`.
 
  @warning This property requires the `SystemConfiguration` framework. Add it in the active target's "Link Binary With Library" build phase, and add `#import <SystemConfiguration/SystemConfiguration.h>` to the header prefix of the project (`Prefix.pch`).
@@ -246,6 +241,11 @@ typedef enum {
  Clears any existing value for the "Authorization" HTTP header.
  */
 - (void)clearAuthorizationHeader;
+
+/**
+ Default headers sent on every request by the HTTP client.
+ */
+- (NSMutableDictionary *) getDefaultHeaders;
 
 ///-------------------------------
 /// @name Managing URL Credentials
